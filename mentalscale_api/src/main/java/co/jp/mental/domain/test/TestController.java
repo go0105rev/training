@@ -1,14 +1,20 @@
 package co.jp.mental.domain.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.jp.mental.Input;
 import co.jp.mental.Output;
 import co.jp.mental.domain.BasicControl;
 import co.jp.mental.service.test.TestService;
 
+/**
+ * 疎通確認（一時ソース）。
+ */
 @RestController
 @RequestMapping("/test")
 public class TestController implements BasicControl{
@@ -17,14 +23,18 @@ public class TestController implements BasicControl{
     TestService testService;
 
     @Override
-    public Output controller() {
-        return testService.run();
+    public Output controller(Input input) {
+        return testService.run(input);
     }
     
 
     @PostMapping
-    public Output postTest() {
-        return controller();
+    public Output postTest(@RequestBody TestInput input) {
+        return controller(input);
     }
 
+    @GetMapping
+    public Output getTest() {
+        return controller(null);
+    }
 }
