@@ -3,25 +3,32 @@ package co.jp.mental.domain;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import co.jp.mental.Output;
+import co.jp.mental.service.test.TestService;
+
+@RestController
 public class MentalController {
 
-    private void controller(Model model,HttpServletRequest req,HttpServletResponse res) {
-        
+    @Autowired
+    TestService testService;
+
+    private Output controller(Model model,HttpServletRequest req,HttpServletResponse res) {
+        return testService.run();
     }
     
     @GetMapping("/index")
-    public void getIndex(Model model,HttpServletRequest req,HttpServletResponse res) {
-        controller(model,req,res);
+    public Output getIndex(Model model,HttpServletRequest req,HttpServletResponse res) {
+        return controller(model,req,res);
     }
 
     @PostMapping("/index")
-    public void postIndex(Model model,HttpServletRequest req,HttpServletResponse res) {
-        controller(model,req,res);
+    public Output postIndex(Model model,HttpServletRequest req,HttpServletResponse res) {
+        return controller(model,req,res);
     }
 }
