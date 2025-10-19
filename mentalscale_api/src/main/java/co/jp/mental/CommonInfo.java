@@ -2,26 +2,16 @@ package co.jp.mental;
 
 public class CommonInfo {
 
-    private String actionId;
-
-    private String mehtod;
+    private int cert;
 
     private String userId;
 
-    public String getActionId() {
-        return actionId;
+    public int getCert() {
+        return cert;
     }
 
-    public void setActionId(String actionId) {
-        this.actionId = actionId;
-    }
-
-    public String getMehtod() {
-        return mehtod;
-    }
-
-    public void setMehtod(String mehtod) {
-        this.mehtod = mehtod;
+    public void setCert(int cert) {
+        this.cert = cert;
     }
 
     public String getUserId() {
@@ -34,7 +24,8 @@ public class CommonInfo {
 
     @Override
     public String toString() {
-        return "CommonInfo [actionId=" + actionId + ", mehtod=" + mehtod + ", userId=" + userId + "]";
+        return "CommonInfo [cert=" + cert + ", userId=" + userId + "]";
     }
+
 
 }
