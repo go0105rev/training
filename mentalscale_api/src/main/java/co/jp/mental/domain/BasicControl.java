@@ -1,10 +1,15 @@
 package co.jp.mental.domain;
 
+import co.jp.mental.ApplicationContextHolder;
 import co.jp.mental.Input;
 import co.jp.mental.Output;
+import co.jp.mental.service.BasicService;
 
 public interface BasicControl {
 
-    abstract public Output controller(Input input);
+    public default Output controller(String action, Input input) {
+        BasicService bs = ApplicationContextHolder.getBean(action+"Service",BasicService.class);
+        return bs.run(input);
+    };
 
 }
