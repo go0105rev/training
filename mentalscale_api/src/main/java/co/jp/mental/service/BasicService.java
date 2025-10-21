@@ -1,10 +1,9 @@
 package co.jp.mental.service;
 
 import co.jp.mental.Input;
-import co.jp.mental.Output;
 
-public interface BasicService {
+public interface BasicService<O,I> {
 
-    public Output run(Input input);
+    public O run(Input I);
 
 }

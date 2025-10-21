@@ -11,7 +11,7 @@ import co.jp.mental.service.BasicService;
  * 疎通確認（一時ソース）。
  */
 @Service
-public class TestService implements BasicService{
+public class TestService implements BasicService<Output, Input>{
 
     @Override
     public Output run(Input input) {

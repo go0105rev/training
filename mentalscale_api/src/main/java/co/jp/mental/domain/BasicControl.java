@@ -8,7 +8,7 @@ import co.jp.mental.service.BasicService;
 public interface BasicControl {
 
     public default Output controller(String action, Input input) {
-        BasicService bs = ApplicationContextHolder.getBean(action+"Service",BasicService.class);
+        BasicService<Output, Input> bs = ApplicationContextHolder.getBean(action + "Service", BasicService.class);
         return bs.run(input);
     };
 
