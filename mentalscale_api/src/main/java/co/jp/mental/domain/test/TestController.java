@@ -16,18 +16,20 @@ import co.jp.mental.service.test.TestService;
  */
 @RestController
 @RequestMapping("/test")
-public class TestController implements BasicControl{
+public class TestController implements BasicControl<Output,TestInput>{
 
     @Autowired
     TestService testService;
 
     @PostMapping
-    public Output postTest(@RequestBody TestInput input) {
+    @Override
+    public Output doPost(@RequestBody TestInput input) {
         return controller("test",input);
     }
 
     @GetMapping
-    public Output getTest() {
+    @Override
+    public Output doGet(@RequestBody TestInput input) {
         return controller("test",null);
     }
 }
