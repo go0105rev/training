@@ -29,7 +29,7 @@ public class TestController implements BasicControl<Output,TestInput>{
 
     @GetMapping
     @Override
-    public Output doGet(@RequestBody TestInput input) {
+    public Output doGet() {
         return controller("test",null);
     }
 }

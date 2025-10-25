@@ -14,14 +14,12 @@ import co.jp.mental.domain.BasicControl;
 public class MentalInquiryController implements BasicControl<Output,MiInput>{
 
     @Override
-    public Output doGet(MiInput input) {
-        return controller("mentalInquiry", null);
-    }
-
-    @Override
     public Output doPost(MiInput input) {
         return controller("mentalInquiry", input);
     }
     
-    
+    @Override
+    public Output doGet() {
+        return controller("mentalInquiry", null);
+    }
 }

@@ -15,6 +15,6 @@ public interface BasicControl<O, I> {
         return bs.run(input);
     };
 
-    public O doGet(@RequestBody I input);
+    public O doGet();
     public O doPost(@RequestBody I input);
 }
