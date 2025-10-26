@@ -16,7 +16,7 @@ import co.jp.mental.service.test.TestService;
  */
 @RestController
 @RequestMapping("/test")
-public class TestController implements BasicControl<Output,TestInput>{
+public class TestController extends BasicControl<Output,TestInput>{
 
     @Autowired
     TestService testService;

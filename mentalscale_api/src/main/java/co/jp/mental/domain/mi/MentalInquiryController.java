@@ -11,7 +11,7 @@ import co.jp.mental.domain.BasicControl;
  */
 @RestController
 @RequestMapping("/mi")
-public class MentalInquiryController implements BasicControl<Output,MiInput>{
+public class MentalInquiryController extends BasicControl<Output,MiInput>{
 
     @Override
     public Output doPost(MiInput input) {
