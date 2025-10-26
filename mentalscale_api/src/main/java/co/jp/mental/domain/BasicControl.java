@@ -19,12 +19,10 @@ public abstract class BasicControl<O, I> {
 
     public Output controller(String action, @NotNull Input input) {
 
-        logger.info(action + "コントローラー処理を開始しました。-->" + input.toString());
+        logger.info(input.toString());
         BasicService<Output, Input> bs = ApplicationContextHolder.getBean(action + "Service", BasicService.class);
-        Output result=bs.run(input);
-        logger.info(action + "コントローラー処理を終了しました。-->" + input.toString());
 
-        return result;
+        return bs.run(input);
 
     }
 

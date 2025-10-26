@@ -16,15 +16,15 @@ public class LoggingAspect {
 
     Logger logger= LoggerFactory.getLogger(LoggingAspect.class);
     
-    @Around("execution(* co.jp.mental.service.*.*(..))")
+    @Around("execution(* co.jp.mental.service.*.*(..)) || execution(* co.jp.mental.domain.*.*(..))")
     public Object logInterceptor(ProceedingJoinPoint joinPoint) {
         try {
 
-            logger.info("-->サービス処理を開始しました。");
+            logger.info(joinPoint.getTarget().getClass().getName()+"-->処理を開始しました。");
             
             Object o= joinPoint.proceed();
             
-            logger.info("-->サービス処理を終了しました。");
+            logger.info(joinPoint.getTarget().getClass().getName()+"-->処理を終了しました。");
             
             return o;
 
