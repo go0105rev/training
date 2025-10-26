@@ -1,22 +1,25 @@
 CREATE TABLE IF NOT EXISTS b_user_inf (
- user_id CHAR(10) NOT NULL PRIMARY KEY,
- user_name CHAR(20) NOT NULL,
- corp_id CHAR(3),
- department CHAR(3),
+ user_id VARCHAR(10) NOT NULL PRIMARY KEY,
+ user_name VARCHAR(20) NOT NULL,
+ corp_id VARCHAR(3),
+ department VARCHAR(3),
  grade INT,
- gender CHAR(1) NOT NULL,
+ gender VARCHAR(1) NOT NULL,
  birth TIMESTAMP NOT NULL,
  career_yrs INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS b_mental_scale (
- user_id CHAR(10) NOT NULL,
- mscale_num CHAR(10) NOT NULL PRIMARY KEY,
- s_date TIMESTAMP NOT NULL
+ user_id VARCHAR(10) NOT NULL,
+ mscale_num VARCHAR(10) NOT NULL PRIMARY KEY,
+ s_date TIMESTAMP NOT NULL,
+ avg_score DOUBLE NOT NULL,
+ max_score INT NOT NULL,
+ min_score INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS b_mental_scale_detail (
- mscale_num CHAR(10) NOT NULL PRIMARY KEY,
+ mscale_num VARCHAR(10) NOT NULL PRIMARY KEY,
  s_date TIMESTAMP NOT NULL,
  scale1 INT,
  scale2 INT,
