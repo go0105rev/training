@@ -2,7 +2,6 @@ package co.jp.mental.service.test;
 
 import org.springframework.stereotype.Service;
 
-import co.jp.mental.Input;
 import co.jp.mental.Output;
 import co.jp.mental.domain.test.TestInput;
 import co.jp.mental.service.BasicService;
@@ -11,10 +10,10 @@ import co.jp.mental.service.BasicService;
  * 疎通確認（一時ソース）。
  */
 @Service
-public class TestService implements BasicService<Output, Input>{
+public class TestService implements BasicService<Output, TestInput>{
 
     @Override
-    public Output run(Input input) {
+    public Output run(TestInput input) {
 
         TestInfo bi = new TestInfo();
         if(input instanceof TestInput in) {
