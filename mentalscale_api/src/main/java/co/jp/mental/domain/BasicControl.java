@@ -12,15 +12,19 @@ import co.jp.mental.service.BasicService;
 public abstract class BasicControl<O, I> {
 
     Logger logger = LoggerFactory.getLogger(BasicControl.class);
-    
+
     public Output controller(String action, Input input) {
 
         BasicService<Output, Input> bs = ApplicationContextHolder.getBean(action + "Service", BasicService.class);
+        logger.info(action + "コントローラー処理を開始しました。-->" + bs.toString());
+        Output result=bs.run(input);
+        logger.info(action + "コントローラー処理を終了しました。-->" + bs.toString());
 
-        return bs.run(input);
+        return result;
 
     }
 
     public abstract O doGet();
+
     public abstract O doPost(@RequestBody I input);
 }

@@ -30,6 +30,6 @@ public class TestController extends BasicControl<Output,TestInput>{
     @GetMapping
     @Override
     public Output doGet() {
-        return controller("test",null);
+        return controller("test",new TestInput());
     }
 }

@@ -20,6 +20,6 @@ public class MentalInquiryController extends BasicControl<Output,MiInput>{
     
     @Override
     public Output doGet() {
-        return controller("mentalInquiry", null);
+        return controller("mentalInquiry", new MiInput());
     }
 }

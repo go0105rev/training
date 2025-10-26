@@ -24,6 +24,9 @@ public class TestInput implements Input {
         this.msg = msg;
     }
 
-
+    @Override
+    public String toString() {
+        return "TestInput [action=" + action + ", msg=" + msg + "]";
+    }
 
 }
