@@ -16,8 +16,8 @@ public class TestService implements BasicService<Output, TestInput>{
     public Output run(TestInput input) {
 
         TestInfo bi = new TestInfo();
-        if(input instanceof TestInput in) {
-            bi.setMsg(in.getMsg());
+        if(input.getAction() != null) {
+            bi.setMsg(input.getMsg());
             bi.setResult(1);
 
         }else {
