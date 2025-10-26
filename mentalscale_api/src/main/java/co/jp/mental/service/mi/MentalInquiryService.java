@@ -7,9 +7,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import co.jp.mental.BusinessException;
 import co.jp.mental.Output;
-import co.jp.mental.ResStatus;
+import co.jp.mental.common.BusinessException;
+import co.jp.mental.common.ResStatus;
 import co.jp.mental.domain.mi.MiInput;
 import co.jp.mental.repository.MentalScale;
 import co.jp.mental.repository.MentalScaleRepository;

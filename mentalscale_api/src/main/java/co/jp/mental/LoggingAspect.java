@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import co.jp.mental.common.SystemException;
+
 @Aspect
 @Component
 //TODO ログと例外ハンドリングは共通で実装してしまっている。

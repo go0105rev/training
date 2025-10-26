@@ -1,4 +1,4 @@
-package co.jp.mental;
+package co.jp.mental.common;
 
 public class SystemException extends RuntimeException{
 
