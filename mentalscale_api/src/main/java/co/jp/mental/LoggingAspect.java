@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
+//TODO ログと例外ハンドリングは共通で実装してしまっている。
 public class LoggingAspect {
 
     Logger logger= LoggerFactory.getLogger(LoggingAspect.class);
@@ -28,7 +29,7 @@ public class LoggingAspect {
         } catch (Throwable e) {
 
             if(e instanceof SystemException se) {
-                logger.error("error -->",se);
+                logger.error(se.getLogMessage(),se);
             }else {
                 logger.error("unknowerror -->",e);
             }
