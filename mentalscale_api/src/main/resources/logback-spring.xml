@@ -10,6 +10,18 @@
         </encoder>
     </appender>
 
+    <!-- File Appender -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/mentalscale_api.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/mentalscale_api_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>2</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
     <logger name="org.hibernate.SQL" level="DEBUG" additivity="true" />
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" additivity="true" />
     <logger name="org.springframework" level="WARN" additivity="true" />
@@ -20,6 +32,7 @@
 
     <root level="DEBUG">
         <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE"/>
     </root>
 
 </configuration>
