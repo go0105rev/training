@@ -3,8 +3,9 @@ package co.jp.mental.service.test;
 import co.jp.mental.BusinessInfo;
 
 public class TestInfo implements BusinessInfo{
+
     private int result;
-    
+
     private String msg;
 
     public int getResult() {
