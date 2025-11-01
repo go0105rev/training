@@ -2,7 +2,7 @@ package co.jp.mental.service.test;
 
 import org.springframework.stereotype.Service;
 
-import co.jp.mental.Output;
+import co.jp.mental.common.Output;
 import co.jp.mental.domain.test.TestInput;
 import co.jp.mental.service.BasicService;
 

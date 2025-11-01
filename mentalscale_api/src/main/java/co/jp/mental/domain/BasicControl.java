@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import co.jp.mental.ApplicationContextHolder;
 import co.jp.mental.Input;
-import co.jp.mental.Output;
+import co.jp.mental.common.ApplicationContextHolder;
+import co.jp.mental.common.Output;
 import co.jp.mental.service.BasicService;
 
 public abstract class BasicControl<O, I> {

@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import co.jp.mental.common.Output;
 import co.jp.mental.common.ResStatus;
 import co.jp.mental.common.SystemException;
 
