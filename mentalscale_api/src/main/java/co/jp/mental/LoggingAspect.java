@@ -49,7 +49,8 @@ public class LoggingAspect {
 
         } finally {
 
-            logger.info(className + "#"+"-->処理を終了しました。"+a.toString());
+            String res=a==null?"":a.toString();
+            logger.info(className + "#"+"-->処理を終了しました。"+res);
 
         }
     }
