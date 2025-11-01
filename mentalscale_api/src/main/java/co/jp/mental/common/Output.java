@@ -1,4 +1,7 @@
-package co.jp.mental;
+package co.jp.mental.common;
+
+import co.jp.mental.BusinessInfo;
+import co.jp.mental.CommonInfo;
 
 public class Output {
 

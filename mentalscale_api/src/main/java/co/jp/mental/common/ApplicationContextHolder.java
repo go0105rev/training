@@ -1,4 +1,4 @@
-package co.jp.mental;
+package co.jp.mental.common;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
