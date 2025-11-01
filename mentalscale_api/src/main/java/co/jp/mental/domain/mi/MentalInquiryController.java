@@ -1,5 +1,6 @@
 package co.jp.mental.domain.mi;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class MentalInquiryController extends BasicControl<Output,MiInput>{
         return controller("mentalInquiry", input);
     }
     
-    @Override
+    @GetMapping
     public Output doGet() {
         return controller("mentalInquiry", new MiInput());
     }
