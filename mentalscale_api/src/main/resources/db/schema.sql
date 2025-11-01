@@ -21,15 +21,15 @@ CREATE TABLE IF NOT EXISTS b_mental_scale (
 CREATE TABLE IF NOT EXISTS b_mental_scale_detail (
  mscale_num VARCHAR(10) NOT NULL PRIMARY KEY,
  s_date TIMESTAMP NOT NULL,
- scale1 INT,
- scale2 INT,
- scale3 INT,
- scale4 INT,
- scale5 INT,
- scale6 INT,
- scale7 INT,
- scale8 INT,
- scale9 INT,
+ scale01 INT,
+ scale02 INT,
+ scale03 INT,
+ scale04 INT,
+ scale05 INT,
+ scale06 INT,
+ scale07 INT,
+ scale08 INT,
+ scale09 INT,
  scale10 INT,
  scale11 INT,
  scale12 INT,
@@ -45,24 +45,9 @@ CREATE TABLE IF NOT EXISTS b_mental_scale_detail (
 );
 
 CREATE TABLE IF NOT EXISTS m_mental (
- ques_scale1 TEXT NOT NULL,
- ques_scale2 TEXT NOT NULL,
- ques_scale3 TEXT NOT NULL,
- ques_scale4 TEXT NOT NULL,
- ques_scale5 TEXT NOT NULL,
- ques_scale6 TEXT NOT NULL,
- ques_scale7 TEXT NOT NULL,
- ques_scale8 TEXT NOT NULL,
- ques_scale9 TEXT NOT NULL,
- ques_scale10 TEXT NOT NULL,
- ques_scale11 TEXT NOT NULL,
- ques_scale12 TEXT NOT NULL,
- ques_scale13 TEXT NOT NULL,
- ques_scale14 TEXT NOT NULL,
- ques_scale15 TEXT NOT NULL,
- ques_scale16 TEXT NOT NULL,
- ques_scale17 TEXT NOT NULL,
- ques_scale18 TEXT NOT NULL,
- ques_scale19 TEXT NOT NULL,
- ques_scale20 TEXT NOT NULL
+ ques_key VARCHAR(4) NOT NULL PRIMARY KEY,
+ ques_detail TEXT
 );
+
+CREATE SEQUENCE mscale_num_seq_2025 START WITH 1;
+CREATE SEQUENCE mscale_num_seq_2026 START WITH 1;
