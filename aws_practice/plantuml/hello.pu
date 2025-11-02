@@ -1,0 +1,36 @@
+@startuml Hello World
+' Uncomment the line below for "dark mode" styling
+'!$AWS_DARK = true
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v20.0/dist
+!include AWSPuml/AWSCommon.puml
+' Uncomment the following line to create simplified view
+!include AWSPuml/AWSSimplified.puml
+!include AWSPuml/BusinessApplications/all.puml
+!include AWSPuml/Storage/SimpleStorageService.puml
+!include AWSPuml/NetworkingContentDelivery/APIGateway.puml
+!include AWSPuml/SecurityIdentityCompliance/Cognito.puml
+!include AWSPuml/Compute/Lambda.puml
+
+
+actor "利用者" as front
+'WorkDocs(desktopAlias, "Label", "Technology")
+SimpleStorageService(storageAlias, "IT人材バンクフロント","S3")
+APIGateway(humanResourceAPI, "IT人材バンクAPI", "API Gateway")
+Cognito(userAuth, "ユーザ認証", "Cognito")
+Lambda(registJobHis, "職務経歴登録機能", "Lambda #1")
+Lambda(analyzeJobHis, "職務経歴データ分析機能", "Lambda #2")
+Lambda(createSubject, "添削結果作成機能", "Lambda #3")
+Lambda(sendSubject, "添削結果送信機能", "Lambda #4")
+Lambda(sendJobHis, "職務経歴送信機能", "Lambda #5")
+
+
+front -->  humanResourceAPI
+front --> userAuth
+humanResourceAPI --> registJobHis
+humanResourceAPI --> analyzeJobHis
+humanResourceAPI --> createSubject
+humanResourceAPI --> sendSubject
+humanResourceAPI --> sendJobHis
+
+front -->  storageAlias
+@enduml

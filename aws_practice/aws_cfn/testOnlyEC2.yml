@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Learning EC2
+
+Resources:
+  learnEC2Instance01:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-0d4aa492f133a3068
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: false
+          DeviceIndex: '0'
+          GroupSet:
+            - Fn::ImportValue: !Sub  "${vpcStackName}-securityGroupId"
+          SubnetId:
+            Fn::ImportValue: !Sub "${vpcStackName}-subnetId"
+      Tags:
+        - Key: Name
+          Value: learning-ec2-01
+        - Key: env
+          Value: learning
+  learnEIP01:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref learnEC2Instance01
+      Tags:
+        - Key: Name
+          Value: learning-eip-01
+        - Key: env
+          Value: learning
+
+
+Parameters:
+  vpcStackName:
+    Type: String
+    Description: 'ネットワークスタック名'
+    Default: test-cfn-network-01
