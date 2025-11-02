@@ -2,28 +2,33 @@ package co.jp.mental.domain.mi;
 
 import co.jp.mental.Input;
 
-public class MiInput implements Input{
+public class MiInput implements Input {
+
+    /**
+     * メンタルスケール詳細照会有無。
+     */
+    private boolean isDetail;
 
     /**
      * 名前。
      */
     private String name;
-    
+
     /**
      * 個人ID。
      */
     private String id;
-    
+
     /**
      * 年齢(上限)。
      */
     private int maxAge;
-    
+
     /**
      * 年齢(下限)。
      */
     private int minAge;
-    
+
     /**
      * 性別。
      */
@@ -33,7 +38,7 @@ public class MiInput implements Input{
      * 入力月（上限）。
      */
     private int maxMonth;
-    
+
     /**
      * 入力月（下限）。
      */
@@ -48,6 +53,14 @@ public class MiInput implements Input{
      * 気分。
      */
     private int emosion;
+
+    public boolean isDetail() {
+        return isDetail;
+    }
+
+    public void setDetail(boolean isDetail) {
+        this.isDetail = isDetail;
+    }
 
     public String getName() {
         return name;
@@ -123,9 +136,8 @@ public class MiInput implements Input{
 
     @Override
     public String toString() {
-        return "MiInput [name=" + name + ", id=" + id + ", maxAge=" + maxAge + ", minAge=" + minAge + ", gender=" + gender + ", maxMonth=" + maxMonth
-                + ", minMonth=" + minMonth + ", corp=" + corp + ", emosion=" + emosion + "]";
+        return "MiInput [isDetail=" + isDetail + ", name=" + name + ", id=" + id + ", maxAge=" + maxAge + ", minAge=" + minAge + ", gender=" + gender
+                + ", maxMonth=" + maxMonth + ", minMonth=" + minMonth + ", corp=" + corp + ", emosion=" + emosion + "]";
     }
-
 
 }
