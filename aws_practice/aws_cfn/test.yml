@@ -1,0 +1,168 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Learning VPC with EC2 instance5
+
+Resources:
+  learningVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      Tags:
+        - Key: env
+          Value: learning
+
+  learningSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref learningVPC
+      CidrBlock: 10.0.2.0/24
+
+  learningSg:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: allow all
+      VpcId: !Ref learningVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref myIp
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref myIp
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Ref myIp
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: !Ref myIp
+
+  learnInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: env
+          Value: learning
+
+  learnVPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref learningVPC
+      InternetGatewayId: !Ref learnInternetGateway
+
+  learnRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref learningVPC
+      Tags:
+        - Key: Name
+          Value: learning-route-table
+        - Key: env
+          Value: learning
+
+  learnRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref learnRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref learnInternetGateway
+  
+  learnSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref learningSubnet
+      RouteTableId: !Ref learnRouteTable
+
+  learnEC2Instance01:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-04e2262049327bfce
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: '0'
+          GroupSet:
+            - !Ref learningSg
+          SubnetId: !Ref learningSubnet
+      Tags:
+        - Key: Name
+          Value: learning-ec2-01
+        - Key: env
+          Value: learning
+
+  learnEC2Instance02:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-04e2262049327bfce
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: '0'
+          GroupSet:
+            - !Ref learningSg
+          SubnetId: !Ref learningSubnet
+      Tags:
+        - Key: Name
+          Value: learning-ec2-02
+        - Key: env
+          Value: learning
+
+  learnEC2Instance03:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-04e2262049327bfce
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: '0'
+          GroupSet:
+            - !Ref learningSg
+          SubnetId: !Ref learningSubnet
+      Tags:
+        - Key: Name
+          Value: learning-ec2-03
+        - Key: env
+          Value: learning
+
+  learnEC2Instance04:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-04e2262049327bfce
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: '0'
+          GroupSet:
+            - !Ref learningSg
+          SubnetId: !Ref learningSubnet
+      Tags:
+        - Key: Name
+          Value: learning-ec2-04
+        - Key: env
+          Value: learning
+
+  learnEC2Instance05:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-04e2262049327bfce
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: '0'
+          GroupSet:
+            - !Ref learningSg
+          SubnetId: !Ref learningSubnet
+      Tags:
+        - Key: Name
+          Value: learning-ec2-05
+        - Key: env
+          Value: learning
+
+Parameters:
+  myIp:
+    Type: String
+    Description: 'オフィスIP'
+    Default: 0.0.0.0/0

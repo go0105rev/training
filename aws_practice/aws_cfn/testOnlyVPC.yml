@@ -1,0 +1,114 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Learning VPC
+
+Resources:
+  learningVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: learning-vpc
+        - Key: env
+          Value: learning
+
+  learningSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref learningVPC
+      CidrBlock: 10.0.2.0/24
+      Tags:
+        - Key: Name
+          Value: learning-subnet
+        - Key: env
+          Value: learning
+
+  learningSg:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: allow all
+      VpcId: !Ref learningVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref myIp
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref myIp
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Ref myIp
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: !Ref myIp
+      Tags:
+        - Key: Name
+          Value: learning-sg
+        - Key: env
+          Value: learning
+
+  learnInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: learning-igw
+        - Key: env
+          Value: learning
+
+  learnVPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref learningVPC
+      InternetGatewayId: !Ref learnInternetGateway
+
+  learnRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref learningVPC
+      Tags:
+        - Key: Name
+          Value: learning-route-table
+        - Key: env
+          Value: learning
+
+  learnRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref learnRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref learnInternetGateway
+  
+  learnSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref learningSubnet
+      RouteTableId: !Ref learnRouteTable
+
+Parameters:
+  myIp:
+    Type: String
+    Description: 'オフィスIP'
+    Default: 0.0.0.0/0
+
+Outputs:
+  vpcId:
+    Description: VPC ID
+    Value: !Ref learningVPC
+    Export:
+      Name: !Sub "${AWS::StackName}-vpcId"
+  subnetId:
+    Description: Subnet ID
+    Value: !Ref learningSubnet
+    Export:
+      Name: !Sub "${AWS::StackName}-subnetId"
+  securityGroupId:
+    Description: Security Group ID
+    Value: !Ref learningSg
+    Export:
+      Name: !Sub "${AWS::StackName}-securityGroupId"
