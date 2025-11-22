@@ -65,6 +65,63 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
+class MenuScaleInput extends StatefulWidget {
+  @override
+  _MenuScaleInputState createState() => _MenuScaleInputState();
+}
+
+class _MenuScaleInputState extends State<MenuScaleInput> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Scale Input'),
+      ),
+      body: Center(
+        child: Text('Scale Input Screen'),
+      ),
+    );
+  }
+}
+
+class MenuScaleHistory extends StatefulWidget {
+  @override
+  _MenuScaleHistoryState createState() => _MenuScaleHistoryState();
+}
+
+class _MenuScaleHistoryState extends State<MenuScaleHistory> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Scale History'),
+      ),
+      body: Center(
+        child: Text('Scale History Screen'),
+      ),
+    );
+  }
+}
+
+class MenuScaleDetail extends StatefulWidget {
+  @override
+  _MenuScaleDetailState createState() => _MenuScaleDetailState();
+}
+
+class _MenuScaleDetailState extends State<MenuScaleDetail> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Scale Detail History'),
+      ),
+      body: Center(
+        child: Text('Scale Detail History Screen'),
+      ),
+    );
+  }
+}
+
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
  
@@ -109,14 +166,44 @@ class MainApp extends StatelessWidget {
                 ListTile(
                   leading: Icon(Icons.scale),
                   title: Text(AppLocalizations.of(context)!.menuScaleInput),
+                  onTap: () {
+                    // Drawer を閉じてから画面遷移
+                    Navigator.pop(context); // Drawer を閉じる
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MenuScaleInput(), // 遷移先 Screen
+                      ),
+                    );
+                  },
                 ),
                 ListTile(
                   leading: Icon(Icons.history),
                   title: Text(AppLocalizations.of(context)!.menuScaleHistory),
+                  onTap: () {
+                    // Drawer を閉じてから画面遷移
+                    Navigator.pop(context); // Drawer を閉じる
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MenuScaleHistory(), // 遷移先 Screen
+                      ),
+                    );
+                  },
                 ),
                 ListTile(
                   leading: Icon(Icons.info),
                   title: Text(AppLocalizations.of(context)!.menuScaleDetail),
+                  onTap: () {
+                    // Drawer を閉じてから画面遷移
+                    Navigator.pop(context); // Drawer を閉じる
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MenuScaleDetail(), // 遷移先 Screen
+                      ),
+                    );
+                  },
                 ),
               ],
             );
