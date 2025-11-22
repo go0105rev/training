@@ -24,4 +24,9 @@ hs_err_pid*
 replay_pid*
 
 # for Flutter 自動生成されるファイル
-**/generated_plugin_registrant.*
+**/linux/**/*.*
+**/ios/**/*.*
+**/macos/**/*.*
+**/web/**/*.*
+**/windows/**/*.*
+**/andoid/**/*.*
