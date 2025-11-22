@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// メンタルスケール詳細履歴画面
 class MenuScaleDetail extends StatefulWidget {
   const MenuScaleDetail({super.key});
 

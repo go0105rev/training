@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_drawer.dart';
 
+/// メイン画面
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 

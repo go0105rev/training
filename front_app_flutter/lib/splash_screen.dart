@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'main_screen.dart';
 
+/// スプラッシュスクリーン
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -30,16 +31,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Icon(
-              Icons.psychology,
-              size: 100,
-              color: Colors.blue,
-            ),
+            Icon(Icons.psychology, size: 100, color: Colors.blue,),
             SizedBox(height: 20),
-            Text(
-              'MyMs Manager',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+            Text('MyMs Manager',style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ],
         ),
       ),

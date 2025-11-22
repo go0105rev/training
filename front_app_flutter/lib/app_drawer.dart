@@ -4,6 +4,7 @@ import 'menu_scale_history.dart';
 import 'menu_scale_detail.dart';
 import 'package:front_app_flutter/l10n/app_localizations.dart';
 
+/// アプリのナビゲーションドロワー
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
  
@@ -15,15 +16,10 @@ class AppDrawer extends StatelessWidget {
               padding: EdgeInsets.zero,
               children: <Widget>[
                 DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    ),
+                  decoration: BoxDecoration(color: Colors.blue),
                   child: Text(
                     AppLocalizations.of(context)!.appTitle,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
+                    style: TextStyle(color: Colors.white, fontSize: 24),
                   ),
                 ),
                 ListTile(

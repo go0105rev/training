@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// メンタルスケール入力画面
 class MenuScaleInput extends StatefulWidget {
   const MenuScaleInput({super.key});
 

@@ -7,12 +7,15 @@ void main() {
   runApp(const MyApp());
 }
 
+/// アプリ本体
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Myメンタルスケール管理',
+      home: const SplashScreen(),
       locale: Locale('zh', 'TW'),
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -20,13 +23,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('en'),
-        Locale('ja'),
-        Locale('zh', 'TW'),
-      ],
-      title: 'Myメンタルスケール管理',
-      home: const SplashScreen(),
+      supportedLocales: const [Locale('en'), Locale('ja'), Locale('zh', 'TW')],
     );
   }
 }
