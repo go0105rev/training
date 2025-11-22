@@ -14,6 +14,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: Locale('zh', 'TW'),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ja'),
+        Locale('zh', 'TW'),
+      ],
       title: 'Myメンタルスケール管理',
       home: const SplashScreen(),
     );
@@ -36,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MainApp()),
+        MaterialPageRoute(builder: (context) => const MainScreen()),
       );
     });
   }
@@ -122,26 +134,12 @@ class _MenuScaleDetailState extends State<MenuScaleDetail> {
   }
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Locale('zh', 'TW'),
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en'),
-        Locale('ja'),
-        Locale('zh', 'TW'),
-      ],
-      home: Scaffold(
-
+    return Scaffold(
         appBar: AppBar.new(
           title: const Text('Myメンタルスケール管理'),
         ),
@@ -213,7 +211,6 @@ class MainApp extends StatelessWidget {
         body: Center(
           child: Text('MyMs Manager'),
         ),
-      ),
     );
   }
 }
