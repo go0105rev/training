@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:front_app_flutter/l10n/app_localizations.dart';
 
-
 void main() {
   runApp(const MainApp());
 }
@@ -30,35 +29,37 @@ class MainApp extends StatelessWidget {
         ),
 
         drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: const <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text(
-                  'MyMs管理 menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
+          child: Builder(builder: (context) { return 
+            ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    ),
+                  child: Text(
+                    AppLocalizations.of(context)!.appTitle,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
-              ),
-              ListTile(
-                leading: Icon(Icons.scale),
-                title: Text('スケール入力'),
-              ),
-              ListTile(
-                leading: Icon(Icons.history),
-                title: Text('スケール履歴'),
-              ),
-              ListTile(
-                leading: Icon(Icons.info),
-                title: Text('スケール詳細履歴'),
-              ),
-            ],
-          ),
+                ListTile(
+                  leading: Icon(Icons.scale),
+                  title: Text(AppLocalizations.of(context)!.menuScaleInput),
+                ),
+                ListTile(
+                  leading: Icon(Icons.history),
+                  title: Text(AppLocalizations.of(context)!.menuScaleHistory),
+                ),
+                ListTile(
+                  leading: Icon(Icons.info),
+                  title: Text(AppLocalizations.of(context)!.menuScaleDetail),
+                ),
+              ],
+            );
+          }),
         ),
 
         body: Center(
