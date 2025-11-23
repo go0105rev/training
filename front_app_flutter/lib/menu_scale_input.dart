@@ -79,7 +79,7 @@ class _MenuScaleInputState extends State<MenuScaleInput> {
           actions: [
             TextButton(
               onPressed: () async {
-                await _insertScale();
+                // await _insertScale();
                 Navigator.pop(dialogContext);
                 Navigator.push(context,MaterialPageRoute(builder: (_) => MainScreen()));
               }, // 遷移先 Screen)
