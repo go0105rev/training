@@ -13,23 +13,24 @@ class MenuScaleInput extends StatefulWidget {
 }
 
 class _MenuScaleInputState extends State<MenuScaleInput> {
+  final String userId = "S000000001"; //テスト用
   int _currentIdx = 0;
   List<Map<String,dynamic>> _selectedAns = [];
 
   final List<Map<String, dynamic>> _answers = [
-    {'text': '非常にそうだ。', 'value': 1},
-    {'text': 'そうだ。', 'value': 2},
+    {'text': '非常にそうだ。', 'value': 5},
+    {'text': 'そうだ。', 'value': 4},
     {'text': 'ややそうだ。', 'value': 3},
-    {'text': 'あまり違う。', 'value': 4},
-    {'text': '全く違う。', 'value': 5},
+    {'text': 'あまり違う。', 'value': 2},
+    {'text': '全く違う。', 'value': 1},
   ];
 
   final List<Map<String, String>> _scale = [
-    {'text':'','id':'M001'},
-    {'text':'','id':'M002'},
-    {'text':'','id':'M003'},
-    {'text':'','id':'M004'},
-    {'text':'','id':'M005'},
+    {'text':'','id':'m001'},
+    {'text':'','id':'m002'},
+    {'text':'','id':'m003'},
+    {'text':'','id':'m004'},
+    {'text':'','id':'m005'},
   ];
 
   @override
@@ -41,7 +42,7 @@ class _MenuScaleInputState extends State<MenuScaleInput> {
 
   Future<void> _loadQuestion() async {
     for (final e in _scale) {
-      e['text'] = (await QuestionApi.fetchQuestion("xxxx", e['id']!))!;
+      e['text'] = (await QuestionApi.fetchQuestion(userId, e['id']!))!;
     }
     setState(() {}); // UI 更新
   }
@@ -52,7 +53,6 @@ class _MenuScaleInputState extends State<MenuScaleInput> {
     final answersMap = <String, dynamic>{
       'mscale_num': seqStr,
       's_date': DateTime.now().toIso8601String(),
-
     };
 
     for (int i = 0; i < _selectedAns.length; i++) {
@@ -90,6 +90,9 @@ class _MenuScaleInputState extends State<MenuScaleInput> {
               onPressed: () async {
                 // await _insertScale();
                 Navigator.pop(dialogContext);
+                showDialog(context: context,barrierDismissible: false,builder: (_) => Center(child: CircularProgressIndicator()),);
+                await QuestionApi.registScale(userId, _selectedAns);
+                Navigator.pop(context);
                 Navigator.push(context,MaterialPageRoute(builder: (_) => MainScreen()));
               }, // 遷移先 Screen)
               child: const Text('完了'),
