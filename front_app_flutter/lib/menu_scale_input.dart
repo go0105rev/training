@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front_app_flutter/app_database.dart';
+import 'package:front_app_flutter/app_mental_api.dart';
 import 'package:front_app_flutter/l10n/app_localizations.dart';
 import 'package:front_app_flutter/main_screen.dart';
 
@@ -24,17 +25,25 @@ class _MenuScaleInputState extends State<MenuScaleInput> {
   ];
 
   final List<Map<String, String>> _scale = [
-    {'text':'私の部署内で意見のくい違いがある','id':'m001'},
-    {'text':'私の仕事は非常に単調である','id':'m002'},
-    {'text':'私は自分の仕事に誇りを持っている','id':'m003'},
-    {'text':'私は自分の仕事に大きな責任を感じている','id':'m004'},
-    {'text':'私の仕事は非常に忙しい','id':'m005'},
+    {'text':'','id':'M001'},
+    {'text':'','id':'M002'},
+    {'text':'','id':'M003'},
+    {'text':'','id':'M004'},
+    {'text':'','id':'M005'},
   ];
 
   @override
   void initState() {
     super.initState();
     _selectedAns = List.generate(_scale.length,(_) => {'id': null, 'value': null}, growable: false);
+    _loadQuestion();
+  }
+
+  Future<void> _loadQuestion() async {
+    for (final e in _scale) {
+      e['text'] = (await QuestionApi.fetchQuestion("xxxx", e['id']!))!;
+    }
+    setState(() {}); // UI 更新
   }
 
   Future<void> _insertScale() async {
