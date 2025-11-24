@@ -5,7 +5,7 @@ import co.jp.mental.Input;
 public class MrInput implements Input {
 
     private String userId;
-    
+
     private String ques;
 
     private Scale scaleEntity;
@@ -40,139 +40,222 @@ public class MrInput implements Input {
     }
 
     public class Scale {
-        private int scale01;
+        private int m001;
 
-        private int scale02;
+        private int m002;
 
-        private int scale03;
+        private int m003;
 
-        private int scale04;
+        private int m004;
 
-        private int scale05;
+        private int m005;
 
-        private int scale06;
+        private int m006;
 
-        private int scale07;
+        private int m007;
 
-        private int scale08;
+        private int m008;
 
-        private int scale09;
+        private int m009;
 
-        private int scale10;
+        private int m010;
 
-        private int scale11;
+        private int m011;
 
-        private int scale12;
+        private int m012;
 
-        private int scale13;
+        private int m013;
 
-        private int scale14;
+        private int m014;
 
-        private int scale15;
+        private int m015;
 
-        private int scale16;
+        private int m016;
 
-        private int scale17;
+        private int m017;
 
-        private int scale18;
+        private int m018;
 
-        private int scale19;
+        private int m019;
 
-        private int scale20;
+        private int m020;
 
         private String other;
 
-        public int getScale01() {
-            return scale01;
+        public int getM001() {
+            return m001;
         }
 
-        public int getScale02() {
-            return scale02;
+        public void setM001(int m001) {
+            this.m001 = m001;
         }
 
-        public int getScale03() {
-            return scale03;
+        public int getM002() {
+            return m002;
         }
 
-        public int getScale04() {
-            return scale04;
+        public void setM002(int m002) {
+            this.m002 = m002;
         }
 
-        public int getScale05() {
-            return scale05;
+        public int getM003() {
+            return m003;
         }
 
-        public int getScale06() {
-            return scale06;
+        public void setM003(int m003) {
+            this.m003 = m003;
         }
 
-        public int getScale07() {
-            return scale07;
+        public int getM004() {
+            return m004;
         }
 
-        public int getScale08() {
-            return scale08;
+        public void setM004(int m004) {
+            this.m004 = m004;
         }
 
-        public int getScale09() {
-            return scale09;
+        public int getM005() {
+            return m005;
         }
 
-        public int getScale10() {
-            return scale10;
+        public void setM005(int m005) {
+            this.m005 = m005;
         }
 
-        public int getScale11() {
-            return scale11;
+        public int getM006() {
+            return m006;
         }
 
-        public int getScale12() {
-            return scale12;
+        public void setM006(int m006) {
+            this.m006 = m006;
         }
 
-        public int getScale13() {
-            return scale13;
+        public int getM007() {
+            return m007;
         }
 
-        public int getScale14() {
-            return scale14;
+        public void setM007(int m007) {
+            this.m007 = m007;
         }
 
-        public int getScale15() {
-            return scale15;
+        public int getM008() {
+            return m008;
         }
 
-        public int getScale16() {
-            return scale16;
+        public void setM008(int m008) {
+            this.m008 = m008;
         }
 
-        public int getScale17() {
-            return scale17;
+        public int getM009() {
+            return m009;
         }
 
-        public int getScale18() {
-            return scale18;
+        public void setM009(int m009) {
+            this.m009 = m009;
         }
 
-        public int getScale19() {
-            return scale19;
+        public int getM010() {
+            return m010;
         }
 
-        public int getScale20() {
-            return scale20;
+        public void setM010(int m010) {
+            this.m010 = m010;
+        }
+
+        public int getM011() {
+            return m011;
+        }
+
+        public void setM011(int m011) {
+            this.m011 = m011;
+        }
+
+        public int getM012() {
+            return m012;
+        }
+
+        public void setM012(int m012) {
+            this.m012 = m012;
+        }
+
+        public int getM013() {
+            return m013;
+        }
+
+        public void setM013(int m013) {
+            this.m013 = m013;
+        }
+
+        public int getM014() {
+            return m014;
+        }
+
+        public void setM014(int m014) {
+            this.m014 = m014;
+        }
+
+        public int getM015() {
+            return m015;
+        }
+
+        public void setM015(int m015) {
+            this.m015 = m015;
+        }
+
+        public int getM016() {
+            return m016;
+        }
+
+        public void setM016(int m016) {
+            this.m016 = m016;
+        }
+
+        public int getM017() {
+            return m017;
+        }
+
+        public void setM017(int m017) {
+            this.m017 = m017;
+        }
+
+        public int getM018() {
+            return m018;
+        }
+
+        public void setM018(int m018) {
+            this.m018 = m018;
+        }
+
+        public int getM019() {
+            return m019;
+        }
+
+        public void setM019(int m019) {
+            this.m019 = m019;
+        }
+
+        public int getM020() {
+            return m020;
+        }
+
+        public void setM020(int m020) {
+            this.m020 = m020;
         }
 
         public String getOther() {
             return other;
         }
 
+        public void setOther(String other) {
+            this.other = other;
+        }
+
         @Override
         public String toString() {
-            return "Scale [scale01=" + scale01 + ", scale02=" + scale02 + ", scale03=" + scale03 + ", scale04=" + scale04 + ", scale05=" + scale05
-                    + ", scale06=" + scale06 + ", scale07=" + scale07 + ", scale08=" + scale08 + ", scale09=" + scale09 + ", scale10=" + scale10
-                    + ", scale11=" + scale11 + ", scale12=" + scale12 + ", scale13=" + scale13 + ", scale14=" + scale14 + ", scale15=" + scale15
-                    + ", scale16=" + scale16 + ", scale17=" + scale17 + ", scale18=" + scale18 + ", scale19=" + scale19 + ", scale20=" + scale20
-                    + "]";
+            return "Scale [m001=" + m001 + ", m002=" + m002 + ", m003=" + m003 + ", m004=" + m004 + ", m005=" + m005 + ", m006=" + m006 + ", m007="
+                        + m007 + ", m008=" + m008 + ", m009=" + m009 + ", m010=" + m010 + ", m011=" + m011 + ", m012=" + m012 + ", m013=" + m013
+                        + ", m014=" + m014 + ", m015=" + m015 + ", m016=" + m016 + ", m017=" + m017 + ", m018=" + m018 + ", m019=" + m019 + ", m020="
+                        + m020 + ", other=" + other + "]";
         }
 
     }

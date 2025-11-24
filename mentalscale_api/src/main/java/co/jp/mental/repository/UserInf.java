@@ -15,6 +15,8 @@ public class UserInf {
 
     private String userName;
 
+    private String mail_addr;
+
     private String corpId;
 
     private String department;
@@ -41,6 +43,14 @@ public class UserInf {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getMail_addr() {
+        return mail_addr;
+    }
+
+    public void setMail_addr(String mail_addr) {
+        this.mail_addr = mail_addr;
     }
 
     public String getCorpId() {
@@ -93,8 +103,8 @@ public class UserInf {
 
     @Override
     public String toString() {
-        return "UserInf [userId=" + userId + ", userName=" + userName + ", corpId=" + corpId + ", department=" + department + ", grade=" + grade
-                + ", gender=" + gender + ", birth=" + birth + ", careerYrs=" + careerYrs + "]";
+        return "UserInf [userId=" + userId + ", userName=" + userName + ", mail_addr=" + mail_addr + ", corpId=" + corpId + ", department="
+                    + department + ", grade=" + grade + ", gender=" + gender + ", birth=" + birth + ", careerYrs=" + careerYrs + "]";
     }
 
 }

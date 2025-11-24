@@ -77,26 +77,26 @@ public class MentalRegisterService implements BasicService<Output, MrInput> {
 
         /* 詳細登録 */
         MentalScaleDetail a = new MentalScaleDetail();
-        a.setScale01(scale.getScale01());
-        a.setScale02(scale.getScale02());
-        a.setScale03(scale.getScale03());
-        a.setScale04(scale.getScale04());
-        a.setScale05(scale.getScale05());
-        a.setScale06(scale.getScale06());
-        a.setScale07(scale.getScale07());
-        a.setScale08(scale.getScale08());
-        a.setScale09(scale.getScale09());
-        a.setScale10(scale.getScale10());
-        a.setScale11(scale.getScale11());
-        a.setScale12(scale.getScale12());
-        a.setScale13(scale.getScale13());
-        a.setScale14(scale.getScale14());
-        a.setScale15(scale.getScale15());
-        a.setScale16(scale.getScale16());
-        a.setScale17(scale.getScale17());
-        a.setScale18(scale.getScale18());
-        a.setScale19(scale.getScale19());
-        a.setScale20(scale.getScale20());
+        a.setM001(scale.getM001());
+        a.setM002(scale.getM002());
+        a.setM003(scale.getM003());
+        a.setM004(scale.getM004());
+        a.setM005(scale.getM005());
+        a.setM006(scale.getM006());
+        a.setM007(scale.getM007());
+        a.setM008(scale.getM008());
+        a.setM009(scale.getM009());
+        a.setM010(scale.getM010());
+        a.setM011(scale.getM011());
+        a.setM012(scale.getM012());
+        a.setM013(scale.getM013());
+        a.setM014(scale.getM014());
+        a.setM015(scale.getM015());
+        a.setM016(scale.getM016());
+        a.setM017(scale.getM017());
+        a.setM018(scale.getM018());
+        a.setM019(scale.getM019());
+        a.setM020(scale.getM020());
         a.setOther(scale.getOther());
 
         try {
@@ -104,6 +104,7 @@ public class MentalRegisterService implements BasicService<Output, MrInput> {
             long s = mnSeq.getNextVal();
             String msNum = String.format("MS25%06d", s);
             a.setMscaleNum(msNum);
+            a.setUserId(userId);
             a.setsDate(LocalDateTime.now());
 
         } catch (Exception e) {
