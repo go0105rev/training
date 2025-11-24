@@ -6,13 +6,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**メンタルスケール。*/
+/** メンタルスケール。 */
 @Entity
 @Table(name = "b_mental_scale")
 public class MentalScale {
-
-    /** 利用者ID。 */
-    private String userId;
 
     /** スケールID。 */
     @Id
@@ -29,14 +26,6 @@ public class MentalScale {
 
     /** 最小得点。 */
     private int minScore;
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
     public String getMscaleNum() {
         return mscaleNum;
@@ -76,6 +65,12 @@ public class MentalScale {
 
     public void setMinScore(int minScore) {
         this.minScore = minScore;
+    }
+
+    @Override
+    public String toString() {
+        return "MentalScale [mscaleNum=" + mscaleNum + ", sDate=" + sDate + ", avgScore=" + avgScore + ", maxScore=" + maxScore + ", minScore="
+                    + minScore + "]";
     }
 
 }
