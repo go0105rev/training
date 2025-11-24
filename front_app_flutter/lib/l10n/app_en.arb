@@ -2,5 +2,18 @@
   "appTitle": "MyMs Manager",
   "menuScaleInput": "Scale Input",
   "menuScaleHistory": "Scale History",
-  "menuScaleDetail": "Scale Detail History"
+  "menuScaleDetail": "Scale Detail History",
+  
+  "scaleInput5": "Strongly Agree",
+  "scaleInput4": "Agree",
+  "scaleInput3": "Somewhat Agree",
+  "scaleInput2": "Disagree",
+  "scaleInput1": "Strongly Disagree",
+
+  "backBtn": "Back",
+  "frontBtn": "Next",
+  "sendBtn": "Submit",
+  "finishBtn": "Finish",
+  "ansFinish": "Answered",
+  "ansNotFinish": "Not answered"
 }

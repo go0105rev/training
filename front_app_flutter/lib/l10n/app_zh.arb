@@ -2,5 +2,18 @@
   "appTitle": "",
   "menuScaleInput": "",
   "menuScaleHistory": "",
-  "menuScaleDetail": ""
+  "menuScaleDetail": "",
+  
+  "scaleInput5": "",
+  "scaleInput4": "",
+  "scaleInput3": "",
+  "scaleInput2": "",
+  "scaleInput1": "",
+
+  "backBtn":"",
+  "frontBtn":"",
+  "sendBtn":"",
+  "finishBtn":"",
+  "ansFinish":"",
+  "ansNotFinish":""
 }
