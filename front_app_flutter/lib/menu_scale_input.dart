@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front_app_flutter/app_database.dart';
 import 'package:front_app_flutter/app_mental_api.dart';
 import 'package:front_app_flutter/l10n/app_localizations.dart';
 import 'package:front_app_flutter/main_screen.dart';
@@ -38,22 +37,6 @@ class _MenuScaleInputState extends State<MenuScaleInput> {
       e['text'] = (await QuestionApi.fetchQuestion(userId, e['id']!))!;
     }
     setState(() {}); // UI 更新
-  }
-
-  Future<void> _insertScale() async {
-    int s = await MentalScaleDatabase.instance.getNextSequence();
-    String seqStr = 'MS25${s.toString().padLeft(6, '0')}';
-    final answersMap = <String, dynamic>{
-      'mscale_num': seqStr,
-      's_date': DateTime.now().toIso8601String(),
-    };
-
-    for (int i = 0; i < _selectedAns.length; i++) {
-      answersMap[_selectedAns[i]['id']] = _selectedAns[i]['value'];
-    }
-
-    // DBに保存
-    await MentalScaleDatabase.instance.insertAnswer(answersMap);
   }
 
   void _nextQuestion() {
