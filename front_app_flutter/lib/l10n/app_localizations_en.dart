@@ -19,4 +19,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get menuScaleDetail => 'Scale Detail History';
+
+  @override
+  String get scaleInput5 => 'Strongly Agree';
+
+  @override
+  String get scaleInput4 => 'Agree';
+
+  @override
+  String get scaleInput3 => 'Somewhat Agree';
+
+  @override
+  String get scaleInput2 => 'Disagree';
+
+  @override
+  String get scaleInput1 => 'Strongly Disagree';
+
+  @override
+  String get backBtn => 'Back';
+
+  @override
+  String get frontBtn => 'Next';
+
+  @override
+  String get sendBtn => 'Submit';
+
+  @override
+  String get finishBtn => 'Finish';
+
+  @override
+  String get ansFinish => 'Answered';
+
+  @override
+  String get ansNotFinish => 'Not answered';
 }

@@ -2,5 +2,18 @@
   "appTitle": "MyMs管理",
   "menuScaleInput": "スケール入力",
   "menuScaleHistory": "スケール履歴",
-  "menuScaleDetail": "スケール詳細履歴"
+  "menuScaleDetail": "スケール詳細履歴",
+  
+  "scaleInput5": "非常にそうだ",
+  "scaleInput4": "そうだ",
+  "scaleInput3": "ややそうだ",
+  "scaleInput2": "あまり違う",
+  "scaleInput1": "全く違う",
+
+  "backBtn": "前へ",
+  "frontBtn": "次へ",
+  "sendBtn": "送信",
+  "finishBtn": "完了",
+  "ansFinish": "回答済み",
+  "ansNotFinish": "未回答"
 }

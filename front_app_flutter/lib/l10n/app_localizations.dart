@@ -124,6 +124,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Scale Detail History'**
   String get menuScaleDetail;
+
+  /// No description provided for @scaleInput5.
+  ///
+  /// In en, this message translates to:
+  /// **'Strongly Agree'**
+  String get scaleInput5;
+
+  /// No description provided for @scaleInput4.
+  ///
+  /// In en, this message translates to:
+  /// **'Agree'**
+  String get scaleInput4;
+
+  /// No description provided for @scaleInput3.
+  ///
+  /// In en, this message translates to:
+  /// **'Somewhat Agree'**
+  String get scaleInput3;
+
+  /// No description provided for @scaleInput2.
+  ///
+  /// In en, this message translates to:
+  /// **'Disagree'**
+  String get scaleInput2;
+
+  /// No description provided for @scaleInput1.
+  ///
+  /// In en, this message translates to:
+  /// **'Strongly Disagree'**
+  String get scaleInput1;
+
+  /// No description provided for @backBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get backBtn;
+
+  /// No description provided for @frontBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get frontBtn;
+
+  /// No description provided for @sendBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get sendBtn;
+
+  /// No description provided for @finishBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish'**
+  String get finishBtn;
+
+  /// No description provided for @ansFinish.
+  ///
+  /// In en, this message translates to:
+  /// **'Answered'**
+  String get ansFinish;
+
+  /// No description provided for @ansNotFinish.
+  ///
+  /// In en, this message translates to:
+  /// **'Not answered'**
+  String get ansNotFinish;
 }
 
 class _AppLocalizationsDelegate

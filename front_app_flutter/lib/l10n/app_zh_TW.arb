@@ -2,5 +2,18 @@
   "appTitle": "我的心理量表管理",
   "menuScaleInput": "心理量表輸入",
   "menuScaleHistory": "心理量表査看",
-  "menuScaleDetail": "詳細心理量表査看"
+  "menuScaleDetail": "詳細心理量表査看",
+  
+  "scaleInput5": "非常同意",
+  "scaleInput4": "同意",
+  "scaleInput3": "稍微同意",
+  "scaleInput2": "不同意",
+  "scaleInput1": "完全不同意",
+
+  "backBtn": "上一題",
+  "frontBtn": "下一題",
+  "sendBtn": "送出",
+  "finishBtn": "完成",
+  "ansFinish": "已回答",
+  "ansNotFinish": "未回答"
 }
